@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LeanChat</title>
+    <meta property="qc:admins" content="61517060451630146167310036375" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="user-scalable=no">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1">
+    <link rel="icon" type="image/png" href="leanchat-icon.png">
+    <!-- build:css styles/styles.css-->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- endbuild -->
+</head>
+<body>
+
+<div>
+    <h1> LeanChat </h1>
+</div>
+
+
+<div>
+    <div id="login-item" class="item">
+        <label>LeanChat 用户名：</label>
+        <input autofocus id="input-name" type="text">
+        <label> 密码：</label>
+        <input id="input-password" type="password">
+
+        <div id="open-btn" class="btn">登录</div>
+    </div>
+    <div id="logout-item" class="item">
+        <label id="current-name-label"></label>
+        <div id="logout-btn" class="btn">注销</div>
+    </div>
+
+</div>
+
+<div class="item">
+    <ul id="conv-list" class="center-block conv-list"></ul>
+    <div id="print-wall" class="center-block print-wall"></div>
+</div>
+<div class="item">
+    <label>输入信息：</label>
+    <input id="input-send" class="input-send" type="text">
+
+    <div id="send-btn" class="btn">发送</div>
+</div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- 引入插件，兼容低 IE8+ 等低版本浏览器，注意看下面的注释。如果不需要兼容，可以去掉这部分。 -->
+
+<!-- build:js scripts/realtime-ie.js -->
+<!--[if lt IE 10]>
+<script type="text/javascript" src="../bower_components/leancloud-realtime/plugin/web-socket-js/swfobject.js"></script>
+<script type="text/javascript" src="../bower_components/leancloud-realtime/plugin/web-socket-js/web_socket.js"></script>
+<script type="text/javascript">
+    // 设置变量，配置插件中 WebSocketMain.swf 的引用路径
+    WEB_SOCKET_SWF_LOCATION = "../bower_components/leancloud-realtime/plugin/web-socket-js/WebSocketMain.swf";
+</script>
+<![endif]-->
+<!-- endbuild -->
+
+<!-- build:js scripts/av.js -->
+<script src="../bower_components/leancloud-realtime/src/AV.realtime.js"></script>
+<script src="../bower_components/leancloud-javascript-sdk/dist/av.js"></script>
+<script src="../bower_components/leancloud-javascript-sdk/dist/localStorage.js"></script>
+ <!-- endbuild -->
+
+<!-- build:js scripts/test.js -->
+<script src="scripts/test.js"></script>
+<!-- endbuild -->
+</body>
+</html>
