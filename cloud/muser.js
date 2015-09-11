@@ -55,6 +55,7 @@ function afterDeleteFollowee(req) {
   var user = req.object.get('user');
   var followee = req.object.get('followee');
   if(user.id == req.user.id){
+  console.log('执行了1');
     /*这里加个判断，否则会执行两次。因为第一个unfollow时，调用了此函数，此函数又调用了unfollow
  ，第二次引发afterDelete*/
     unfollow(followee, user).then(function () {
