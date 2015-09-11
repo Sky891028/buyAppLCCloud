@@ -1,9 +1,9 @@
 /*eslint strict:false */
 
 // 请将 AppId 改为你自己的 AppId，否则无法本地测试
-var appId = 'x3o016bxnkpyee7e9pa5pre6efx2dadyerdlcez0wbzhw25g';
+var appId = 'z8nocl5wu1n0mm1zfo2pb5bkrdpav2pgbuaq7e92t005arsq';
 
-var appKey = '057x24cfdzhffnl3dzk14jh9xo2rq6w1hy1fdzt5tv46ym78';
+var appKey = 'v116rmiuki6zwoeganzp9ew9kdfb8acmxr5nnjuay9edd74q';
 
 AV.initialize(appId, appKey);
 

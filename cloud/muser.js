@@ -5,9 +5,10 @@ var mutil = require('cloud/mutil');
 var mlog = require('cloud/mlog');
 var _ = require('underscore');
 var Avatar = AV.Object.extend('Avatar');
+var userSheet = 'testsdfsdf';
 
 function findUserById(userId, queryFn) {
-  var q = new AV.Query('_User');
+  var q = new AV.Query(userSheet);
   if (queryFn) {
     queryFn(q);
   }
@@ -15,19 +16,19 @@ function findUserById(userId, queryFn) {
 }
 
 function findUser(modifyQueryFn) {
-  return mutil.findOne('_User', modifyQueryFn);
+  return mutil.findOne(userSheet, modifyQueryFn);
 }
 
 function findUserByName(name) {
   return findUser(function (q) {
-    q.equalTo('username', name);
+    q.equalTo('nickname', name);
   });
 }
 
 function findUsernameById(id) {
   var p = new AV.Promise();
   findUserById(id).then(function (user) {
-    p.resolve(user.get('username'));
+    p.resolve(user.get('nickname'));
   }, function (error) {
     console.log(error.message);
     p.resolve();
@@ -36,14 +37,14 @@ function findUsernameById(id) {
 }
 
 function findUsers(userIds) {
-  var q = new AV.Query('_User');
+  var q = new AV.Query(userSheet);
   q.containedIn('objectId', userIds);
   q.include('setting');
   return q.find();
 }
 
 function findAllUsers(modifyQueryFn) {
-  return mutil.findAll('_User', modifyQueryFn);
+  return mutil.findAll(userSheet, modifyQueryFn);
 }
 
 function unfollow(user, targetUser) {
@@ -65,8 +66,8 @@ function afterDeleteFollowee(req) {
 }
 
 function unfollowTest(req, res) {
-  unfollow(AV.Object.createWithoutData('_User', "5416d9b2e4b0f645f29ddbfd"),
-    AV.Object.createWithoutData('_User', "54bc8c2de4b0644caaed25e3")).then(function () {
+  unfollow(AV.Object.createWithoutData(userSheet, "5416d9b2e4b0f645f29ddbfd"),
+    AV.Object.createWithoutData(userSheet, "54bc8c2de4b0644caaed25e3")).then(function () {
       res.success('ok');
     }, mlog.cloudErrorFn)
 }
