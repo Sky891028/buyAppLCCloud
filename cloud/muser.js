@@ -4,7 +4,7 @@
 var mutil = require('cloud/mutil');
 var mlog = require('cloud/mlog');
 var _ = require('underscore');
-var Avatar = AV.Object.extend('Avatar');
+var Avatar = AV.Object.extend('nickname');
 var userSheet = 'testsdfsdf';
 
 function findUserById(userId, queryFn) {
@@ -39,7 +39,7 @@ function findUsernameById(id) {
 function findUsers(userIds) {
   var q = new AV.Query(userSheet);
   q.containedIn('objectId', userIds);
-  q.include('setting');
+//  q.include('nickname');
   return q.find();
 }
 
