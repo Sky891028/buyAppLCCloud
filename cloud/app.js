@@ -21,6 +21,7 @@ function setUserAvatar(req, res) {
         var len = avatars.length;
         var pos = Math.floor(len * Math.random());
         if (user.get('avatar') == null) {
+	       console.log('木有');
           user.set('avatar', avatars[pos].get('file'));
           ps.push(user.save());
         }
