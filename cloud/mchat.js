@@ -16,7 +16,7 @@ function getPushMessage(params) {
   var contentStr = params.content;
   var json = {
     badge: "Increment",
-    sound: "default",
+    sound: "bayMax1.aiff",
     convid: params.convId     //来支持点击弹框，跳转至相应对话
 //    ,"_profile": "dev"      //设置证书，开发时用 dev，生产环境不设置
   };
@@ -52,7 +52,9 @@ function receiversOffline(req, res) {
   if (req.params.convId) {
     // api v2
     try{
-      var pushMessage = getPushMessage(req.params);
+      var pushMessage = getPushMessage(req.params); 
+      console.log(pushMessage);
+      
       res.success({pushMessage: pushMessage});
     } catch(err) {
       // json parse error
