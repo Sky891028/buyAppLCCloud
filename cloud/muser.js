@@ -36,7 +36,7 @@ function findUsernameById(id) {
   	success: function(results) {
 //    	 alert("Successfully retrieved " + results.length + " posts.");
    	 // 处理返回的结果数据
-      var obj = results[i];
+      var obj = results[0];
       var userNickName = obj('nickname');
       console.log(userNickName);
       return userNickName;
