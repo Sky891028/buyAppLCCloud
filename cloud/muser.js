@@ -41,11 +41,8 @@ function findUsernameById(id) {
       console.log(userNickName);
       return userNickName;
      }
-  },
-  error: function(error) {
-	  return "来自大白的消息:";
-//     alert("Error: " + error.code + " " + error.message);
   }
+//   return "";
 });
   
   
