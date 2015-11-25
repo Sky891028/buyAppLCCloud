@@ -43,7 +43,7 @@ function findUsernameById(id) {
      }
   },
   error: function(error) {
-	  return "";
+	  return "来自大白的消息:";
 //     alert("Error: " + error.code + " " + error.message);
   }
 });
