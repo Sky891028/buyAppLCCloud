@@ -9,7 +9,8 @@ var userSheet = 'testsdfsdf';
 
 function findUserById(userId, queryFn) {
   var q = new AV.Query(userSheet);
-  console.log('finduserByID'+q);
+  console.log('finduserByID');
+  console.log(q);
   if (queryFn) {
     queryFn(q);
   }
@@ -28,7 +29,7 @@ function findUserByName(name) {
 
 function findUsernameById(id) {
 	
-	  console.log('finduserNameByID'+'\n'+id);
+	  console.log('finduserNameByID' + id);
 
   var p = new AV.Promise();
   findUserById(id).then(function (user) {
@@ -42,7 +43,7 @@ function findUsernameById(id) {
 }
 
 function findUsers(userIds) {
-	console.log('findUsers'+userIds);
+	  console.log(userIds);
 
   var q = new AV.Query(userSheet);
   q.containedIn('objectId', userIds);
