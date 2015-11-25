@@ -13,6 +13,7 @@ function messageReceived(req, res) {
 }
 
 function getPushMessage(params) {
+	console.log(params.content);
   var contentStr = params.content;
   var json = {
     badge: "Increment",
