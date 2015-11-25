@@ -30,7 +30,28 @@ function findUserByName(name) {
 function findUsernameById(id) {
 	
   console.log(id);
+  var query = new AV.Query(userSheet);
+  query.equalTo("objectId", id);
+  query.find({
+  	success: function(results) {
+//    	 alert("Successfully retrieved " + results.length + " posts.");
+   	 // 处理返回的结果数据
+      var object = results[i];
+      var userNickName = object('nickname');
+      console.log(userNickName));
+      return userNickName;
+     }
+  },
+  error: function(error) {
+	  return '';
+    alert("Error: " + error.code + " " + error.message);
+  }
+});
+  
+  
+  
 
+/*
   var p = new AV.Promise();
   findUserById(id).then(function (user) {
 	  console.log(user);
@@ -39,10 +60,11 @@ function findUsernameById(id) {
     console.log(error.message);
     p.resolve();
   });
+*/
   return p;
 }
 
-function findUsers(userIds) {
+function findUsers(userIds) {	
 	  console.log(userIds);
 
   var q = new AV.Query(userSheet);
