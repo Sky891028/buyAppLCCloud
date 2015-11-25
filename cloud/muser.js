@@ -41,7 +41,7 @@ function findUsernameById(id) {
       console.log(userNickName);
       return userNickName;
      }
-  }
+  });
 //   return "";
 }
   
