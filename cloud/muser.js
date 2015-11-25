@@ -29,7 +29,7 @@ function findUserByName(name) {
 
 function findUsernameById(id) {
 	
-	  console.log('finduserNameByID' + id);
+  console.log(id);
 
   var p = new AV.Promise();
   findUserById(id).then(function (user) {
