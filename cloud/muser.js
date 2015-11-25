@@ -58,8 +58,10 @@ function findUsernameById(id) {
     p.resolve();
   });
 */
+/*
   return p;
 }
+*/
 
 function findUsers(userIds) {	
 	  console.log(userIds);
