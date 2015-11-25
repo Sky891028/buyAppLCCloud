@@ -43,7 +43,6 @@ function findUsernameById(id) {
      }
   },
   error: function(error) {
-	  return '';
     alert("Error: " + error.code + " " + error.message);
   }
 });
