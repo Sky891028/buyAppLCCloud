@@ -24,15 +24,18 @@ function getPushMessage(params) {
   var msg = JSON.parse(contentStr);
   var msgDesc = getMsgDesc(msg);
   if (msg._lcattrs && msg._lcattrs.username) {
-      json.alert = msg._lcattrs.username + ' : ' + msgDesc;
-  } else {
-      json.alert = msgDesc;
+      json.alert = msg._lcattrs.username + ': ' + msgDesc;
+  } else if(msg._lcattrs.pid && msg._lcattrs.pid == 1){
+      json.alert = '世界工厂网新访客咨询:' + msgDesc;
   }
   if (msg._lcattrs && msg._lcattrs.dev) {
     json._profile = "dev";
   }
   return JSON.stringify(json);
 }
+
+
+
 
 function getMsgDesc(msg) {
   var type = msg._lctype;
