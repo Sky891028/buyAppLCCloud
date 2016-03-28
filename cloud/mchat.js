@@ -25,7 +25,7 @@ function getPushMessage(params) {
   var msgDesc = getMsgDesc(msg);
   if (msg._lcattrs && msg._lcattrs.username) {
       json.alert = msg._lcattrs.username + ': ' + msgDesc;
-  } else if(msg._lcattrs.pid && msg._lcattrs.pid == 1){
+  } else if(msg._lcattrs.mgt &&(msg._lcattrs.mgt == 3 || msg._lcattrs.mgt == 5)){
       json.alert = '世界工厂网新访客咨询:' + msgDesc;
   }
   if (msg._lcattrs && msg._lcattrs.dev) {
