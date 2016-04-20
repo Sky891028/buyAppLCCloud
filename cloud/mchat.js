@@ -44,9 +44,9 @@ function getMsgDesc(msg) {
   if (type == msgTypeText) {
     return msg._lctext;
   } else if (type == msgTypeImage) {
-    return "图片";
+    return "发来一张[图片]";
   } else if (type == msgTypeAudio) {
-    return "声音";
+    return "发来一段[语音]";
   } else if (type == msgTypeLocation) {
     return msg._lctext;
   } else {
